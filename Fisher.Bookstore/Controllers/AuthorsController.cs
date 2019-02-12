@@ -1,5 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Fisher.Bookstore.Models;
+
 
 namespace Fisher.Bookstore.Controllers
 {
@@ -11,7 +13,13 @@ namespace Fisher.Bookstore.Controllers
         }
         public IActionResult Featured()
         {
-            return View();
+            var featuredAuthor = new Author()
+            {
+                AuthorId = 1,
+                
+                Name = "J.R.R. Tolkien"
+            };
+            return View(featuredAuthor);
         }
     }
 }
